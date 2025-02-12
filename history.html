@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video History</title>
+</head>
+<body>
+    <h1>Video Watch History</h1>
+    <ul>
+        {% for entry in history %}
+        <li>
+            <strong>{{ entry['video_title'] }}</strong> - Watched on {{ entry['watch_time'] }}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Watch a Video:</h2>
+    <ul>
+        <li><a href="{{ url_for('watch_video', video_title='Video 1') }}">Watch Video 1</a></li>
+        <li><a href="{{ url_for('watch_video', video_title='Video 2') }}">Watch Video 2</a></li>
+        <li><a href="{{ url_for('watch_video', video_title='Video 3') }}">Watch Video 3</a></li>
+    </ul>
+</body>
+</html>
